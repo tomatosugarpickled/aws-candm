@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.candm.mapper.MemberActivityFileMapper">
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into tbl_activity_file(id, member_id, member_activity_id)
+        values (#{id}, #{memberId}, #{memberActivityId})
+    </insert>
+
+    <select id="selectAllByMemberId">
+        select
+            id, file_path, file_name,
+            file_original_name, file_size,
+            file_content_type, created_datetime, updated_datetime,
+            member_id, member_activity_id
+        from view_activity_file
+        where member_activity_id = #{memberActivityId}
+    </select>
+
+    <delete id="delete">
+        delete from tbl_activity_file
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteByActivityId">
+        delete from tbl_activity_file
+        where member_activity_id = #{memberActivityId}
+    </delete>
+
+</mapper>

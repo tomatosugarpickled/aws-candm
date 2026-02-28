@@ -1,0 +1,1873 @@
+/* 전역 색상 변수 임포트 */
+@import url('../common/global-colors.css');
+
+/*
+============================================================================
+C&M Insight - 스타일시트
+============================================================================
+
+프로젝트: 비즈니스 인사이트 및 이벤트 플랫폼
+작성일: 2026
+설명: 다크 테마 기반의 모던한 비즈니스 플랫폼 UI
+
+============================================================================
+목차:
+1. 전역 스타일 및 리셋
+2. 레이아웃 구조
+3. 배너 섹션
+4. 인사이트 탐색 영역
+5. 이벤트 카드
+6. 주제별 보기
+7. 검색 및 필터
+8. 검색 결과 표시
+9. 모달 (상세 보기)
+10. 드롭다운 메뉴
+11. 반응형 대응
+============================================================================
+
+색상 팔레트:
+- 주 배경: #0e0f10
+- 카드 배경: #121314
+- 테두리: rgba(255,255,255,0.08)
+- 주 텍스트: #ffffff
+- 보조 텍스트: #ffffff99
+- 비활성: #ffffff66
+- 버튼 배경: #ffffff1f
+
+타이포그래피:
+- 제목: 18-24px, font-weight: 600
+- 본문: 13-15px, font-weight: 400
+- 캡션: 12px, font-weight: 400
+
+============================================================================
+*/
+
+
+/* ========================================================================
+   1. 전역 스타일 및 리셋
+   ======================================================================== */
+
+/* 전역 리셋(*, svg, body)은 main.css에서 처리 */
+
+
+/* ========================================================================
+   2. 레이아웃 구조
+   ======================================================================== */
+
+/**
+ * 메인 컨테이너
+ * - 고정 크기 레이아웃
+ * - 라운드 테두리 디자인
+ * - 내부 스크롤 처리
+ */
+.main-border {
+    margin-left: 297px;  /* 좌측 사이드바 공간 확보 */
+    margin-top: 10px;    /* 상단 여백 */
+    width: 1614px;
+    height: 893px;
+    border: solid 1px;
+    border-radius: 16px;
+    border-color: var(--border-semi-transparent); /* 전역 변수 사용 */
+    background-color: var(--bg-page); /* 전역 변수 사용 */
+    overflow: hidden;
+}
+
+/**
+ * 헤더 영역
+ * - 상단 고정 헤더
+ * - 구분선으로 컨텐츠와 분리
+ */
+.div-header {
+    width: 1614px;
+    height: 52px;
+    flex-direction: column;
+    border-color: var(--border-semi-transparent); /* 전역 변수 사용 */
+    align-items: center;
+    border-bottom: 1px solid var(--border-semi-transparent); /* 전역 변수 사용 */
+    width: 100%;
+    display: flex;
+}
+
+/**
+ * 메인 컨테이너 래퍼
+ * - 수직 스크롤 가능
+ * - 중앙 정렬 레이아웃
+ * - 컨텐츠 간격 일관성 유지
+ */
+.div-container {
+    flex: 1 0 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-y: auto;
+    align-self: stretch;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    outline: none;
+    position: relative;
+}
+
+/**
+ * 컨텐츠 래퍼
+ * - 최대 너비 제한으로 가독성 향상
+ * - 수직 레이아웃
+ */
+.div-content-wrap {
+    flex-direction: column;
+    max-width: 1000px;
+    gap: 16px;
+    flex: 1 0 0;
+    width: 100%;
+    display: flex;
+}
+
+
+/* ========================================================================
+   3. 배너 섹션
+   ======================================================================== */
+
+/**
+ * 배너 컨테이너
+ * - 프로젝트 공개 안내 메시지
+ * - 이미지와 텍스트를 가로로 배치
+ * - 호버 효과를 위한 커서 변경
+ */
+.banner-container {
+    align-items: flex-end;
+    border: 1px solid;
+    border-color: var(--border-semi-transparent); /* 전역 변수 사용 */
+    border-radius: 12px;
+    min-height: fit-content;
+    max-width: 1000px;
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    background-color: var(--bg-card); /* 전역 변수 사용 */
+    overflow-y: auto;
+}
+
+/**
+ * 배너 텍스트 영역
+ */
+.banner-content-wrap {
+    align-self: stretch;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    gap: 6px;
+    flex: 1 0 0;
+    display: flex;
+}
+
+.banner-content {
+    width: 100%;
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+/**
+ * 배너 주요 텍스트
+ * - 강조를 위한 큰 폰트
+ * - 높은 대비의 흰색
+ */
+.banner-content-text01 {
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    letter-spacing: -.36px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+/**
+ * 배너 부가 설명
+ * - 작은 폰트
+ * - 낮은 투명도로 위계 표현
+ */
+.banner-content-text02 {
+    font-size: 8px;
+    font-family: var(--fonts-korean); /* 전역 변수 사용 */
+    color: var(--text-secondary); /* 전역 변수 사용 */
+}
+
+/**
+ * 배너 이미지 영역
+ */
+.banner-content-image {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+}
+
+.banner-image {
+    color: transparent;
+    border-radius: 12px;
+    height: 84px;
+    object-fit: cover;
+    width: 117px;
+}
+
+
+/* ========================================================================
+   4. 인사이트 탐색 영역
+   ======================================================================== */
+
+/**
+ * 이벤트 컨테이너
+ * - 배너 하단의 주요 컨텐츠 영역
+ * - 카드 형태의 디자인
+ */
+.event-container {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--border-primary); /* 전역 변수 사용 */
+    border-radius: 16px;
+    flex-direction: column;
+    background-color: var(--bg-card); /* 전역 변수 사용 */
+    width: 100%;
+    display: flex;
+}
+
+/**
+ * 탐색 섹션 래퍼
+ * - 비즈니스 인사이트 카드 목록
+ */
+.search-wrap {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    display: flex;
+}
+
+/**
+ * 섹션 헤더 영역
+ * - 제목과 네비게이션 버튼 배치
+ */
+.search-text-area {
+    align-items: flex-end;
+    gap: 8px;
+    width: 97%;
+    display: flex;
+}
+
+.search-text {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-inline: 8px;
+    width: 100%;
+    gap: 4px;
+    display: flex;
+}
+
+.search-text-inner {
+    align-items: flex-end;
+    white-space: pre-line;
+    gap: 8px;
+    width: 100%;
+    display: flex;
+}
+
+/**
+ * 섹션 제목
+ * - 18px 볼드 폰트
+ */
+.search-content {
+    color: var(--text-primary);
+    letter-spacing: -.36px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+/**
+ * 네비게이션 화살표 버튼
+ * - 좌우 스크롤 컨트롤
+ * - 비활성 상태 표시 (opacity: 0.4)
+ */
+.search-arrows {
+    align-items: flex-end;
+    gap: 6px;
+    display: flex;
+    width: 62px;
+    height: 28px;
+}
+
+.search-left-arrow,
+.search-right-arrow {
+    align-items: center;
+    display: flex;
+}
+
+.left-arrow-button,
+.right-arrow-button {
+    opacity: .4;
+    cursor: not-allowed;
+    background-color: var(--bg-card)1f;
+    justify-content: center;
+    align-items: center;
+    min-height: 28px;
+    max-height: 28px;
+    padding: 6px;
+    display: inline-flex;
+    border-radius: 7px;
+    width: 28px;
+    height: 28px;
+}
+
+.left-arrow-svg,
+.right-arrow-svg {
+    width: 16px;
+    height: 16px;
+    color: var(--text-primary);
+}
+
+/**
+ * 카드 그리드 영역
+ * - 가로 스크롤 가능
+ * - 스크롤바 숨김
+ * - 균등 분할 레이아웃
+ */
+.search-image-area {
+    overflow-x: auto;
+    scrollbar-width: none;
+    overflow: hidden;
+    width: 98%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/**
+ * 인사이트 카드
+ * - 정사각형 이미지 + 텍스트 레이아웃
+ * - 호버 효과를 위한 커서
+ */
+.search-image-wrap {
+    flex-shrink: 0;
+    flex-direction: column;
+    width: 25vw;
+    cursor: pointer;
+    padding: 8px;
+    gap: 12px;
+    display: flex;
+    width: 123px;
+    height: 189px;
+}
+
+/**
+ * 카드 이미지
+ * - 1:1 비율 유지
+ * - 라운드 코너
+ */
+.search-image {
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+}
+
+/**
+ * 카드 텍스트 영역
+ */
+.search-image-text {
+    flex-direction: column;
+    gap: 4px;
+    display: flex;
+}
+
+/**
+ * 카드 주요 텍스트
+ * - 카테고리명
+ */
+.primary-text-inner {
+    letter-spacing: -.44999999999999996px;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+/**
+ * 카드 보조 텍스트
+ * - 부가 설명
+ * - 낮은 투명도
+ */
+.secondary-text-inner {
+    color: var(--text-primary)99;
+    letter-spacing: -.24px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+
+/* ========================================================================
+   5. 이벤트 카드 (공지사항)
+   ======================================================================== */
+
+/**
+ * 이벤트 섹션 래퍼
+ * - 공지사항 카드 목록
+ */
+.event-wrap {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    display: flex;
+}
+
+/**
+ * 이벤트 카드 그리드
+ * - 가로 스크롤
+ */
+.event-image-area {
+    overflow-x: auto;
+    scrollbar-width: none;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    gap: 50px;
+}
+
+/**
+ * 이벤트 카드
+ * - 와이드 이미지 + 상세 정보
+ * - 클릭하여 모달 열기
+ */
+.event-image-wrap {
+    flex-shrink: 0;
+    flex-direction: column;
+    max-width: 224px;
+    cursor: pointer;
+    padding: 8px;
+    gap: 12px;
+    display: flex;
+}
+
+/**
+ * 이벤트 이미지 컨테이너
+ * - D-day 배지 오버레이
+ */
+.event-image {
+    position: relative;
+    width: 228px;
+}
+
+.event-image-inner {
+    color: transparent;
+    border-radius: 8px;
+    height: 152px;
+    object-fit: cover;
+    width: 228px;
+}
+
+/**
+ * D-day 카운터 배지
+ * - 좌측 상단 고정
+ * - 반투명 배경
+ */
+.d-day-count {
+    cursor: default;
+    left: 6px;
+    position: absolute;
+    top: 6px;
+    border-radius: 5px;
+    padding: 3px 6px;
+    background: var(--text-secondary); /* 전역 변수 사용 */
+    gap: 3px;
+    letter-spacing: -.2px;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 14px;
+}
+
+.d-day-count-inner {
+    color: var(--text-primary);
+    letter-spacing: -.2px;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 14px;
+}
+
+/**
+ * 이벤트 정보 영역
+ * - 아이콘, 제목, 설명 세로 배치
+ */
+.event-image-text {
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 0 0;
+    display: flex;
+}
+
+/**
+ * 이벤트 헤더 (아이콘 + 카테고리)
+ */
+.image-text-header {
+    gap: 6px;
+    display: flex;
+}
+
+.header-icon {
+    cursor: default;
+    align-items: center;
+    position: relative;
+    display: flex;
+}
+
+.header-icon-inner {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+
+.header-text {
+    color: var(--text-primary);
+    letter-spacing: -.24px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+/**
+ * 이벤트 제목
+ */
+.image-text-middle {
+    align-items: center;
+    gap: 6px;
+    display: flex;
+}
+
+.image-text-middle-inner {
+    color: var(--text-primary);
+    letter-spacing: -.26px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+/**
+ * 이벤트 설명
+ */
+.image-text-footer {
+    flex-direction: column;
+    display: flex;
+}
+
+.image-text-footer-inner {
+    color: var(--text-primary)99;
+    letter-spacing: -.24px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+
+/* ========================================================================
+   6. 주제별 보기
+   ======================================================================== */
+
+/**
+ * 주제별 보기 섹션
+ * - 기술, 컨텐츠, 교육, AI 카테고리
+ */
+.theme-area {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    display: flex;
+}
+
+/**
+ * 주제 카드 그리드
+ * - 3열 반응형 레이아웃
+ * - flex-wrap으로 자동 줄바꿈
+ */
+.theme-wrap {
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    display: flex;
+}
+
+/**
+ * 주제 카드
+ * - 아이콘 + 텍스트 가로 배치
+ * - 유연한 너비 (flex-grow)
+ */
+.theme-inner {
+    min-width: 200px;
+    flex: 1 1 calc((100% - 16px) / 3);
+    max-width: 290px;
+    cursor: pointer;
+    padding: 12px;
+    gap: 12px;
+    display: flex;
+}
+
+/**
+ * 주제 아이콘 컨테이너
+ * - 정사각형 배경
+ * - SVG 중앙 정렬
+ */
+.theme-inner-icon {
+    border-radius: 7.2px;
+    cursor: inherit;
+    height: 22px;
+    padding: 7.2px;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-card)1f;
+    display: inline-flex;
+}
+
+.theme-icon-svg {
+    color: var(--text-primary);
+}
+
+/**
+ * 주제 텍스트 영역
+ */
+.theme-inner-text {
+    flex-direction: column;
+    flex: 1 0 0;
+    display: flex;
+}
+
+.theme-inner-text-primary {
+    color: var(--text-primary);
+    letter-spacing: -.3px;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.theme-inner-text-secondary {
+    color: var(--text-primary)99;
+    font-weight: 400;
+    letter-spacing: -.26px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+
+/* ========================================================================
+   7. 검색 및 필터
+   ======================================================================== */
+
+/**
+ * 하단 컨텐츠 래퍼
+ * - 검색, 필터, 결과 표시 영역
+ */
+.div-content-wrap-bottom {
+    position: relative;
+    width: 100%;
+    gap: 8px;
+    max-width: 1000px;
+    margin-bottom: 80px;
+}
+
+/**
+ * 검색 컨텐츠 컨테이너
+ */
+.search-event-content {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--text-primary)14;
+    flex-direction: column;
+    border-radius: 16px;
+    background: var(--bg-card); /* 전역 변수 사용 */
+    gap: 8px;
+    padding: 12px;
+    display: flex;
+}
+
+/**
+ * 검색바 및 필터 래퍼
+ * - flex-wrap으로 반응형 배치
+ */
+.search-bar-wrap {
+    flex: 1 1 0%;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    padding: 8px;
+    display: flex;
+}
+
+/**
+ * 검색 입력 필드
+ * - 아이콘 + 입력창 + 초기화 버튼
+ */
+.search-bar {
+    justify-content: left;
+    align-items: center;
+    max-height: 36px;
+    border-radius: 9px;
+    min-height: 36px;
+    padding-inline: 8px;
+    gap: 8px;
+    width: 62%;
+    background: var(--bg-card)14;
+    display: flex;
+}
+
+.search-bar-icon-wrap {
+    flex-shrink: 0;
+    align-items: center;
+    display: flex;
+    width: 600px;
+}
+
+.search-bar-icon {
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    color: var(--text-primary)66;
+}
+
+/**
+ * 검색 입력 input
+ * - 투명 배경
+ * - 아웃라인 제거
+ */
+.search-bar-input {
+    background: transparent; /* 투명 배경 */
+    height: 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+    letter-spacing: -.26px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--text-primary);
+}
+
+/**
+ * 입력 초기화 버튼
+ * - 기본 숨김 상태
+ * - JavaScript로 입력 시 표시
+ */
+.input-button {
+    align-items: center;
+    background: transparent; /* 투명 배경 */
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    display: flex;
+}
+
+.input-button-js {
+    display: none;
+}
+
+.input-button-icon {
+    border-radius: 0px;
+    cursor: inherit;
+    height: 18px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    color: var(--text-primary)66;
+    transition: transform .15s cubic-bezier(.68, -.55, .265, 1.55);
+}
+
+/**
+ * 필터 드롭다운 버튼
+ * - 유형, 주제, 위치 필터
+ * - 클릭 시 드롭다운 메뉴 표시
+ */
+
+/* 유형 필터 */
+.select-category-wrap {
+    align-items: center;
+    max-height: 36px;
+    min-height: 36px;
+    border-radius: 9px;
+    display: inline-flex;
+    padding-inline: 12px;
+    cursor: pointer;
+    background: var(--bg-card)14;
+    position: relative;
+    z-index: 1;
+}
+
+.select-category {
+    padding-inline: 6px;
+    text-overflow: ellipsis;
+    color: var(--text-primary); 
+    width: 100%;
+    font-weight: 400;
+    letter-spacing: -.26px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.select-category-box {
+    border-radius: 0px;
+    cursor: inherit;
+    height: 18px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    color: var(--text-primary)66;
+}
+
+/* 주제 필터 */
+.select-theme-wrap {
+    align-items: center;
+    max-height: 36px;
+    min-height: 36px;
+    border-radius: 9px;
+    display: inline-flex;
+    padding-inline: 12px;
+    cursor: pointer;
+    background: var(--bg-card)14;
+}
+
+.select-theme {
+    padding-inline: 6px;
+    text-overflow: ellipsis;
+    color: var(--text-primary); 
+    width: 100%;
+    font-weight: 400;
+    letter-spacing: -.26px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.select-theme-box {
+    border-radius: 0px;
+    cursor: inherit;
+    height: 18px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    color: var(--text-primary)66;
+}
+
+/* 위치 필터 */
+.select-location-wrap {
+    align-items: center;
+    max-height: 36px;
+    min-height: 36px;
+    border-radius: 9px;
+    display: inline-flex;
+    padding-inline: 12px;
+    cursor: pointer;
+    background: var(--bg-card)14;
+}
+
+.select-location {
+    padding-inline: 6px;
+    text-overflow: ellipsis;
+    color: var(--text-primary); 
+    width: 100%;
+    font-weight: 400;
+    letter-spacing: -.26px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.select-location-box {
+    border-radius: 0px;
+    cursor: inherit;
+    height: 18px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    color: var(--text-primary)66;
+}
+
+
+/* ========================================================================
+   8. 검색 결과 표시
+   ======================================================================== */
+
+/**
+ * 검색 결과 컨테이너
+ * - 최소 높이 설정으로 레이아웃 유지
+ * - 스크롤 가능
+ */
+.find-box-container {
+    overflow-y: auto;
+    flex-direction: column;
+    min-height: 400px;
+    scrollbar-width: none;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+}
+
+/**
+ * 결과 없음 메시지
+ * - 중앙 정렬
+ * - 기본 표시 상태
+ */
+.unfinded-wrap {
+    gap: 20px;
+    width: 100%;
+    display: flex;
+}
+
+.unfinded-inner {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 4px;
+    display: flex;
+    padding: 30px 20px;
+}
+
+.unfinded-inner-text {
+    white-space: pre-line;
+    text-align: center;
+    color: var(--text-primary);
+    letter-spacing: -.3px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+/**
+ * 검색 결과 카드
+ * - 날짜별 그룹핑
+ * - 썸네일 + 정보 가로 배치
+ */
+.find-box-wrap {
+    flex-direction: column;
+    display: flex;
+}
+
+/**
+ * 날짜 헤더
+ */
+.find-box-header {
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    cursor: default;
+}
+
+.find-box-header-innner {
+    align-items: center;
+    gap: 6px;
+    flex: 1 0 0;
+    display: flex;
+}
+
+.find-box-header-span {
+    align-items: center;
+    color: var(--text-primary)99;
+    white-space: nowrap;
+    gap: 4px;
+    display: flex;
+    letter-spacing: -.26px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+/**
+ * 결과 카드 본문
+ * - 썸네일 210px 고정
+ * - 나머지 공간은 정보 영역
+ */
+.find-box-body {
+    gap: 16px;
+    cursor: pointer;
+    width: 100%;
+    padding: 8px;
+    display: flex;
+}
+
+/**
+ * 썸네일 영역
+ * - D-day 배지 오버레이
+ */
+.find-box-body-image {
+    position: relative;
+}
+
+.find-box-body-image-inner {
+    cursor: default;
+    left: 6px;
+    position: absolute;
+    top: 6px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    min-width: 20px;
+    background: var(--text-secondary); /* 전역 변수 사용 */
+    padding: 2px 4px;
+    gap: 3px;
+    display: inline-flex;
+    letter-spacing: -.2px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+}
+
+.find-box-body-image-icon {
+    white-space: nowrap;
+    color: var(--text-primary);
+}
+
+/**
+ * 정보 영역
+ * - 프로필, 제목, 설명, 인터랙션 버튼
+ */
+.find-box-body-wrap {
+    justify-content: center;
+    flex-direction: column;
+    flex: 1 0 0;
+    gap: 8px;
+    display: flex;
+}
+
+/**
+ * 프로필 영역 (아이콘 + 이름)
+ */
+.find-body-content {
+    gap: 6px;
+    display: flex;   
+}
+
+.content-profile {
+    cursor: default;
+    align-items: center;
+    position: relative;
+    display: flex;
+}
+
+.content-profile-img {
+    border-radius: 2.4px;
+    margin-left: 0px;
+    mask-size: 13.7504px 16px;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+
+.profile-primary-text {
+    color: var(--text-primary);
+    letter-spacing: -.24px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+/**
+ * 카드 제목
+ */
+.find-body-first-text {
+    gap: 6px;
+    display: flex;
+}
+
+.content-primary-text {
+    color: var(--text-primary);
+    letter-spacing: -.36px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+/**
+ * 카드 설명
+ */
+.find-body-second-text {
+    display: flex;
+}
+
+.content-secondary-text {
+    color: var(--text-primary)99;
+    letter-spacing: -.24px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+/**
+ * 인터랙션 버튼 (조회수, 공유)
+ * - 투명 배경
+ * - 아이콘 + 숫자 조합
+ */
+.find-body-button-wrap {
+    gap: 16px;
+    display: flex;
+}
+
+.find-body-button {
+    justify-content: center;
+    align-items: center;
+    padding-block: 4px;
+    display: inline-flex;
+    cursor: pointer;
+    gap: 4px;
+    background: transparent; /* 투명 배경 */
+}
+
+.find-body-button-icon {
+    border-radius: 0px;
+    cursor: pointer;
+    height: 18px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    color: var(--text-primary);
+}
+
+.find-body-button-text {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.find-body-button-primary {
+    white-space: nowrap;
+    color: var(--text-primary);
+    letter-spacing: -.78px;
+    font-size: 16px;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+
+/* ========================================================================
+   9. 푸터
+   ======================================================================== */
+
+/**
+ * 푸터 링크 영역
+ * - 광고 문의, 파트너 문의, FAQ
+ */
+.footer-content {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 4px;    
+    display: flex;
+    margin-top: 10px;
+}
+
+.footer-button {
+    column-gap: 3px;
+    justify-content: center;
+    align-items: center;
+    min-height: 28px;
+    max-height: 28px;
+    padding: 6px;
+    display: inline-flex;
+    width: fit-content;
+    cursor: pointer;
+    letter-spacing: -.24px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    background: transparent; /* 투명 배경 */
+}
+
+.footer-button-inner {
+    padding-inline: 4px;
+    color: var(--text-primary)99;
+    white-space: nowrap;
+}
+
+
+/* ========================================================================
+   10. 모달 (상세 보기)
+   ======================================================================== */
+
+/**
+ * 모달 오버레이
+ * - 배경 딤 처리
+ * - 초기 상태 숨김 (opacity: 0)
+ * - .open 클래스로 표시
+ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* 모달 오버레이 배경 */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 998;
+}
+
+/**
+ * 모달 창
+ * - 우측에서 슬라이드 인 애니메이션
+ * - 초기 위치: 화면 밖 (translateX(150%))
+ * - .open 클래스로 표시
+ */
+.modal {
+    position: fixed;
+    top: 0%;
+    left: 67%;
+    width: 600px;
+    padding: 20px;
+    border-radius: 12px;
+    transform: translateX(150%);
+    transition: all 0.35s ease;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/**
+ * 모달 활성화 상태
+ * - overlay와 modal에 .open 클래스 추가
+ */
+.modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.modal.open {
+    transform: translate(0);
+    pointer-events: auto;
+}
+
+/**
+ * 모달 컨테이너
+ * - 수직 스크롤 가능
+ * - 최대 높이 설정
+ */
+.modal-container {
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    scrollbar-width: none;
+    height: 97vh;
+}
+
+/**
+ * 모달 래퍼
+ * - 카드 스타일
+ */
+.modal-wrap {
+    border-width: 1px;
+    border-style: solid;
+    height: 100%;
+    border-color: var(--text-primary)14;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 16px;
+    background: var(--bg-card); /* 전역 변수 사용 */
+    display: flex;
+    scrollbar-width: none;
+}
+
+/**
+ * 모달 헤더
+ * - 고정 헤더 (sticky)
+ * - 닫기 버튼 + 공유 버튼
+ */
+.modal-header {
+    justify-content: space-between;
+    top: 0;
+    align-items: center;
+    min-height: 56px;
+    height: 56px;
+    padding-inline: 8px;
+    position: sticky;
+    width: 96%;
+    display: flex;
+}
+
+.modal-header-icon {
+    gap: 8px;
+    width: 100%;
+    display: flex;
+}
+
+/**
+ * 닫기 버튼
+ */
+.modal-icon {
+    background-color: var(--bg-button-secondary); /* 밝은 회색 배경 */
+    justify-content: center;
+    align-items: center;
+    padding: 9px;
+    max-height: 36px;
+    border-radius: 9px;
+    min-height: 36px;
+    display: inline-flex;
+    color: var(--text-primary); /* 검은색 텍스트 */
+    cursor: pointer;
+}
+
+.modal-icon-inner {
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    color: var(--text-secondary); /* 반투명 검은색 */
+}
+
+/**
+ * 액션 버튼 영역
+ */
+.modal-inner-context {
+    justify-content: flex-end;
+    gap: 8px;
+    width: 100%;
+    display: flex;
+}
+
+/**
+ * 공유 버튼
+ */
+.modal-inner-share {
+    background-color: var(--bg-button-secondary); /* 밝은 회색 배경 */
+    justify-content: center;
+    align-items: center;
+    padding: 9px;
+    max-height: 36px;
+    border-radius: 9px;
+    min-height: 36px;
+    display: inline-flex;
+    color: var(--text-primary); /* 검은색 텍스트 */
+    cursor: pointer;
+}
+
+.modal-inner-span {
+    padding-inline: 6px;
+    white-space: nowrap;
+    display: flex;
+    letter-spacing: -.26px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+/**
+ * 등록 버튼 (필요 시 활성화)
+ */
+.modal-inner-regist {
+    background-color: var(--bg-card);
+    justify-content: center;
+    align-items: center;
+    padding: 9px;
+    color: var(--color-black); /* 전역 변수 사용 */
+    max-height: 36px;
+    border-radius: 9px;
+    min-height: 36px;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+/**
+ * 모달 본문
+ * - 스크롤 가능 영역
+ */
+.modal-body {
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.modal-body-wrap {
+    flex-direction: column;
+    padding: 12px;
+    gap: 12px;
+    display: flex;
+}
+
+/**
+ * 태그 영역
+ */
+.modal-body-inner01 {
+    padding: 4px;
+    width: 100%;
+    gap: 4px;
+    display: flex;
+}
+
+.modal-body-nwcf {
+    justify-content: center;
+    align-items: center;
+    padding: 3px 8px;
+    min-width: 24px;
+    background: var(--bg-card)1f;
+    gap: 3px;
+    border-radius: 6px;
+    display: inline-flex;
+}
+
+.nwcf-span {
+    white-space: nowrap;
+    color: var(--text-primary);
+    letter-spacing: -.24px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+/**
+ * 모달 제목
+ */
+.modal-body-title {
+    align-items: flex-end;
+    gap: 8px;
+    width: 100%;
+    display: flex;
+}
+
+.modal-body-title-start {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-inline: 8px;
+    width: 100%;
+    gap: 4px;
+    display: flex;
+}
+
+.modal-body-title-end {
+    align-items: flex-end;
+    white-space: pre-line;
+    gap: 8px;
+    width: 100%;
+    display: flex;
+}
+
+.modal-body-title-content {
+    color: var(--text-primary);
+    letter-spacing: -.48px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+/**
+ * 이벤트 정보 리스트
+ * - 호스트, 날짜, 주제 등
+ */
+.modal-body-column {
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+}
+
+.modal-body-column-inner {
+    cursor: pointer;
+    align-items: flex-start;
+    min-width: 240px;
+    padding: 12px 8px;
+    flex: 1 0 0;
+    width: 100%;
+    gap: 12px;
+    display: flex;
+}
+
+/**
+ * 정보 레이블
+ */
+.hdlt {
+    max-width: 100px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.hdlt-text {
+    color: var(--text-primary)99;
+    font-weight: 400;
+    letter-spacing: -.26px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+/**
+ * 정보 내용
+ */
+.hdlt-content {
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1 0 0;
+    gap: 8px;
+    display: flex;
+}
+
+.hdlt-content-column {
+    flex-direction: column;
+    flex: 1 0 0;
+    display: flex;
+}
+
+.hdlt-content-p {
+    white-space: pre-wrap;
+    color: var(--text-primary);
+    font-weight: 400;
+    letter-spacing: -.26px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.hdlt-content-p-second {
+    color: var(--text-primary)99;
+    letter-spacing: -.24px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+/**
+ * 상세 내용 섹션
+ * - 공지사항 내용, 관련 콘텐츠, 주최자 정보 등
+ */
+.modal-body-elh {
+    flex-direction: column;
+    width: 100%;
+    padding: 12px;
+    gap: 12px;
+    display: flex;
+}
+
+/**
+ * 섹션 제목
+ */
+.elh-title {
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+}
+
+.elh-title-inner {
+    cursor: default;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px;
+    display: flex;
+}
+
+.elh-title-content {
+    align-items: center;
+    gap: 6px;
+    flex: 1 0 0;
+    display: flex;
+}
+
+.elh-span {
+    align-items: center;
+    color: var(--text-primary)99;
+    white-space: nowrap;
+    gap: 4px;
+    display: flex;
+    letter-spacing: -.26px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+/**
+ * 구분선
+ */
+.elh-underbar {
+    align-self: stretch;
+    align-items: flex-start;
+    flex-direction: column;
+    background: var(--bg-card)14;
+    height: 1px;
+    display: flex;
+    width: 95%;
+}
+
+/**
+ * 섹션 내용
+ */
+.elh-content-wrap {
+    flex-direction: column;
+    max-height: none;
+    width: 95%;
+    display: flex;
+}
+
+.elt-content {
+    flex-direction: column;
+    color: var(--text-primary);
+    width: 100%;
+    display: flex;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.elt-content-span {
+    text-align: left;
+    white-space: pre-line;
+    text-overflow: ellipsis;
+    color: var(--text-primary);
+    width: 100%;
+    letter-spacing: -.3px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.elt-content-p {
+    text-align: left;
+    white-space: pre-line;
+    text-overflow: ellipsis;
+    color: var(--text-primary)99;
+    width: 100%;
+    letter-spacing: -.3px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+
+/* ========================================================================
+   11. 드롭다운 메뉴
+   ======================================================================== */
+
+/**
+ * 이벤트 오버레이 (클릭 이벤트 감지용)
+ */
+.event-div {
+    background-color: transparent; /* 투명 배경 */
+    bottom: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99999;
+    position: fixed;
+    pointer-events: none;
+}
+
+/**
+ * 드롭다운 메뉴
+ * - 필터 버튼 클릭 시 표시
+ * - 초기 상태 숨김 (opacity: 0)
+ * - JavaScript로 위치 및 표시 제어
+ */
+.shadow-menu {
+    height: auto;
+    max-height: 700px;
+    position: absolute;
+    top: 65px;
+    width: 220px;
+    opacity: 0;
+    transform: none;
+    flex-direction: column;
+    pointer-events: auto;
+    border-radius: 16px;
+    border: 1px solid var(--border-primary); /* 전역 변수 사용 */
+    background: var(--bg-card); /* 전역 변수 사용 */
+    display: flex;
+}
+
+/**
+ * 메뉴 위치 조정
+ * - 각 필터 버튼에 맞춰 위치 지정
+ */
+.shadow-menu.type {
+    right: 130px;
+}
+
+.shadow-menu.subject {
+    right: 18px;
+}
+
+.shadow-menu.location {
+    right: -98px;
+}
+
+/**
+ * 메뉴 헤더
+ */
+.shadow-menu-header {
+    align-items: flex-start;
+    border-radius: 16px 16px 0 0;
+    padding: 12px 16px 0;
+    width: 100%;
+    display: flex;
+}
+
+.shadow-menu-header-inner {
+    color: var(--text-primary)99;
+    letter-spacing: -.24px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+/**
+ * 메뉴 본문 컨테이너
+ */
+.shadow-menu-body-container {
+    overflow: auto;
+    display: flex;
+}
+
+.shadow-menu-body-wrap {
+    flex-direction: column;
+    flex: 1 0 0;
+    width: 100%;
+    display: flex;
+}
+
+.shadow-menu-body-inner {
+    padding: 8px;
+    display: flex;
+}
+
+/**
+ * 메뉴 옵션 스크롤 영역
+ * - 커스텀 스크롤바
+ */
+.shadow-menu-body-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%;
+    scrollbar-width: thin !important;
+    scrollbar-gutter: stable !important;
+    scrollbar-color: var(--text-primary)3d transparent !important;
+}
+
+/**
+ * 메뉴 옵션 아이템
+ * - 체크박스 형태
+ * - 클릭으로 선택/해제
+ */
+.menu-scroll {
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+}
+
+.menu-scroll-inner01 {
+    align-items: center;
+    width: 100%;
+    display: flex;
+}
+
+.menu-scroll-inner02 {
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    padding: 8px;
+    display: flex;
+}
+
+.menu-scroll-inner03 {
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    min-height: 24px;
+    padding-inline: 4px;
+    flex: 1 0 0;
+    display: flex;
+}
+
+/**
+ * 옵션 텍스트
+ */
+.menu-scroll-primary {
+    color: var(--text-primary);
+    font-weight: 400;
+    letter-spacing: -.26px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.menu-scroll-secondary {
+    position: relative;
+    white-space: pre-wrap;
+    color: var(--text-primary)99;
+    letter-spacing: -.24px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    z-index: 0;
+}
+
+/**
+ * 체크 아이콘
+ * - 기본 숨김 (opacity: 0)
+ * - 선택 시 JavaScript로 표시
+ */
+.menu-scroll-check {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    display: flex;
+}
+
+.checkclickoff {
+    opacity: 0;
+}
+
+.menu-scroll-check-inner {
+    border-radius: 0px;
+    cursor: inherit;
+    height: 20px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    color: var(--text-primary);
+}
+
+
+/* ========================================================================
+   12. 반응형 및 접근성
+   ======================================================================== 
+   
+   반응형 디자인 고려사항:
+   - 1000px 이하: 컨텐츠 너비 조정
+   - 768px 이하: 그리드 2열로 변경
+   - 480px 이하: 그리드 1열로 변경
+   
+   접근성 고려사항:
+   - 키보드 네비게이션 지원
+   - 충분한 색상 대비
+   - 포커스 표시
+   - 스크린 리더 호환
+   
+   성능 최적화:
+   - CSS transform 사용 (GPU 가속)
+   - will-change 속성 활용
+   - 불필요한 리플로우 최소화
+   
+   ======================================================================== */
+
+/* 
+포트폴리오 특이사항:
+1. 모든 애니메이션은 ease 또는 cubic-bezier 사용
+2. 다크 테마 일관성 유지
+3. 4px 단위 그리드 시스템
+4. 모바일 우선 접근 (필요 시 확장)
+*/

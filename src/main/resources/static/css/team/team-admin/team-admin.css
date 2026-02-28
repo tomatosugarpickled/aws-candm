@@ -1,0 +1,51 @@
+/* 전역 색상 변수 임포트 */@import url('../../common/global-colors.css');
+
+.admin-edit-btn:hover {
+    background: rgba(18, 19, 20, 0.8);
+}
+
+.banner-edit-btn {
+    top: 16px;
+    right: 16px;
+}
+
+.profile-img-edit-btn {
+    bottom: -4px;
+    right: -4px;
+    padding: 5px;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    justify-content: center;
+}
+
+.admin-main-btn {
+    /* Style re-using follow-button style but maybe different color */
+    background-color: var(--text-primary);
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    padding: 0 16px;
+    height: 36px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-sm-btn {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.admin-sm-btn:hover {
+    background-color: var(--bg-page);
+}

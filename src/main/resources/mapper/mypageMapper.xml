@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.candm.mapper.MyPageMapper">
+
+<!--    경력 입력-->
+    <insert id="careerInsert" useGeneratedKeys="true" keyProperty="id">
+        insert into tbl_member_career(affiliation_title, member_employment_type, member_role, member_skill, intro_detailed, start_date, end_date, member_id)
+        VALUES (#{affiliationTitle}, #{memberEmploymentType},#{memberRole}, #{memberSkill}, #{introDetailed}, #{startDate}, #{endDate}, #{memberId})
+    </insert>
+
+<!--    목록 조회-->
+    <select id="selectCareerByMemberId">
+        select c.id, c.affiliation_title, c.member_employment_type, c.member_role, c.member_skill, c.intro_detailed, c.start_date, c.end_date, c.member_id, c.created_datetime, c.updated_datetime, m.id
+        from tbl_member_career c join tbl_member m
+        on c.member_id = m.id
+        where c.member_id = #{memberId}
+    </select>
+
+<!--    삭제-->
+    <delete id="deleteCareer">
+        delete from tbl_member_career
+        where id = #{id}
+    </delete>
+
+<!--====================================================학력===========================================================-->
+
+<!--학력 추가-->
+    <insert id="educationInsert" useGeneratedKeys="true" keyProperty="id">
+        insert into tbl_education(education_title, education_type, education_major, education_graduation, intro_detailed, start_date, end_date, member_id)
+        values (#{educationTitle}, #{educationType}, #{educationMajor}, #{educationGraduation}, #{introDetailed}, #{startDate}, #{endDate}, #{memberId} )
+    </insert>
+
+<!--    학력 조회-->
+    <select id="selectEducationByMemberId">
+        select e.id, e.education_title, e.education_type, e.education_major, e.education_graduation, e.intro_detailed, e.start_date, e.end_date, e.member_id, e.created_datetime, e.updated_datetime, m.id
+        from tbl_education e join tbl_member m
+        on e.member_id = m.id
+        where e.member_id = #{memberId}
+    </select>
+
+<!--    삭제-->
+    <delete id="deleteEducation">
+        delete from tbl_education
+        where id = #{id}
+    </delete>
+
+<!-- ===========================================================활동========================================================   -->
+
+    <insert id="activityInsert" parameterType="MemberActivityDTO" useGeneratedKeys="true" keyProperty="id">
+        insert into tbl_member_activity(award_title, activity_type, start_date, member_id)
+        values (#{awardTitle}, #{activityType}, #{startDate}, #{memberId})
+    </insert>
+
+
+    <select id="selectActivityByMemberId">
+        select ma.id, ma.award_title, ma.activity_type, ma.start_date, ma.member_id, ma.created_datetime, ma.updated_datetime ,m.id
+        from tbl_member_activity ma join tbl_member m
+        on ma.member_id = m.id
+        where ma.member_id = #{memberId}
+    </select>
+
+    <select id="selectActivityById">
+        select
+            distinct
+               m.id, m.member_email, m.member_name,
+               ma.id, ma.award_title, ma.activity_type, ma.start_date,
+               ma.member_id, ma.created_datetime, ma.updated_datetime
+        from tbl_member m join tbl_member_activity ma
+        on m.id = ma.member_id
+        where ma.id = #{id}
+    </select>
+
+    <delete id="deleteActivity">
+        delete from tbl_member_activity
+        where id = #{id}
+    </delete>
+
+</mapper>
+

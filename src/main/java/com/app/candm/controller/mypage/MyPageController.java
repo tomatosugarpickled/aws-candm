@@ -1,0 +1,130 @@
+package com.app.candm.controller.mypage;
+
+import com.app.candm.dto.member.MemberDTO;
+import com.app.candm.dto.member.MemberFileDTO;
+import com.app.candm.dto.mypage.*;
+import com.app.candm.service.mypage.MyPageService;
+import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+@Controller
+@RequiredArgsConstructor
+@RequestMapping("/mypage/**")
+@Slf4j
+public class MyPageController {
+
+    private final MyPageService myPageService;
+
+    //    마이페이지 이동, 이동 시 로그인 정보가 없으면 로그인 페이지로 이동
+    @GetMapping("")
+    public String gotoMyPage(HttpSession session, Model model){
+        MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
+        if(memberDTO == null){
+            return "redirect:/member/login";
+        }
+        model.addAttribute("member", memberDTO);
+        model.addAttribute("isOwner", true);
+        return "/mypage/mypage";
+    }
+
+//===================================================경력====================================================================
+    @PostMapping("career/regist")
+    @ResponseBody
+    public void careerRegist(@RequestBody  MemberCareerDTO memberCareerDTO){
+
+        String startDate = memberCareerDTO.getStartYear() + "-" + memberCareerDTO.getStartMonth();
+        String endDate = memberCareerDTO.getEndYear() + "-" + memberCareerDTO.getEndMonth();
+
+        memberCareerDTO.setStartDate(startDate);
+        memberCareerDTO.setEndDate(endDate);
+
+        myPageService.regist(memberCareerDTO);
+    }
+
+    @GetMapping("career/{memberId}")
+    @ResponseBody
+    public MemberWithCareerDTO careerList(@PathVariable Long memberId){
+        return myPageService.getCareerByMemberId(memberId);
+    }
+
+    @DeleteMapping("{id}")
+    @ResponseBody
+    public void deleteCareer(@PathVariable Long id){
+        myPageService.delete(id);
+    }
+
+
+//=================================================학력=================================================================
+    @PostMapping("education/regist")
+    @ResponseBody
+    public void educationRegist(@RequestBody MemberEducationDTO memberEducationDTO){
+
+        String startDate = memberEducationDTO.getStartYear() + "-" + memberEducationDTO.getStartMonth();
+        String endDate = memberEducationDTO.getEndYear() + "-" + memberEducationDTO.getEndMonth();
+
+        memberEducationDTO.setStartDate(startDate);
+        memberEducationDTO.setEndDate(endDate);
+
+        myPageService.regist(memberEducationDTO);
+    }
+
+    @GetMapping("education/{memberId}")
+    @ResponseBody
+    public MemberWithEducationDTO educationList(@PathVariable Long memberId){
+        return myPageService.getEducationByMemberId(memberId);
+    }
+
+    @DeleteMapping("education/{id}")
+    @ResponseBody
+    public void deleteEducation(@PathVariable Long id){
+        myPageService.deleteEducation(id);
+    }
+
+//    ================================================활동====================================================
+    @PostMapping("activity/regist")
+    @ResponseBody
+    public void activityRegist(MemberActivityDTO memberActivityDTO, @RequestParam(value = "file", required = false) ArrayList<MultipartFile> multipartFiles){
+        String startDate = memberActivityDTO.getStartYear() + "-" + memberActivityDTO.getStartMonth();
+        memberActivityDTO.setStartDate(startDate);
+
+        myPageService.regist(memberActivityDTO, multipartFiles);
+    }
+
+    @GetMapping("activity/{memberId}")
+    @ResponseBody
+    public List<MemberActivityDTO> activityList(@PathVariable Long memberId){
+        return myPageService.getActivityByMemberId(memberId);
+    }
+    @DeleteMapping("activity/{id}")
+    @ResponseBody
+    public void deleteActivity(@PathVariable Long id){
+        myPageService.deleteActivity(id);
+    }
+
+//=================================================프로필 등록=================================
+    @PostMapping("profile/regist")
+    @ResponseBody
+    public void profileRegist(Long memberId,@RequestParam(value = "multipartFile", required = false) MultipartFile file){
+        myPageService.profileRegist(memberId, file);
+    }
+
+    @GetMapping("profile/{id}")
+    @ResponseBody
+    public Optional<MemberFileDTO> profileView(@PathVariable Long id){
+
+        log.info("id: {}",id);
+        return myPageService.findProfileByMemberId(id);
+    }
+
+
+
+}

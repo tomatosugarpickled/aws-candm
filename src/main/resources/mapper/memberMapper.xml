@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.candm.mapper.MemberMapper">
+<!--    회원가입-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into tbl_member(member_email, member_password, member_name, member_phone_number)
+        values (#{memberEmail}, #{memberPassword},#{memberName},#{memberPhoneNumber})
+    </insert>
+
+<!--    카카오회원가입-->
+    <insert id="kakaoInsert" useGeneratedKeys="true" keyProperty="id">
+        insert into tbl_member(member_email, member_name, member_phone_number)
+        values (#{memberEmail}, #{memberName}, #{memberPhoneNumber})
+    </insert>
+
+<!--    카카오회원인지 일반회원인지-->
+    <insert id="insertOauth">
+        insert into tbl_oauth(id, provider)
+        values(#{id}, #{provider})
+    </insert>
+
+<!--    이메일 찾기 -->
+    <select id="selectByMemberEmail">
+        select m.id, m.member_email, m.member_password, m.member_name, m.member_status, m.created_datetime, m.updated_datetime, o.provider
+        from tbl_member m join tbl_oauth o
+        on m.id = o.id
+        where member_email = #{memberEmail}
+    </select>
+
+<!--    일반 로그인-->
+    <select id="selectMemberForLogin">
+        select m.id, m.member_email, m.member_password, m.member_name, m.member_status, m.created_datetime, m.updated_datetime, o.provider
+        from tbl_member m join tbl_oauth o
+        on m.id = o.id
+        where member_email = #{memberEmail} and member_password = #{memberPassword}
+    </select>
+</mapper>

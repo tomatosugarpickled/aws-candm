@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funding-page</title>
+    <link rel="stylesheet" href="/css/main/main.css">
+    <link rel="stylesheet" href="/css/funding/funding-list-page.css">
+</head>
+<body>
+<div th:replace="fragments/header :: layout(~{::content})">
+    <div th:fragment="content">
+        <div class="div-container" style="padding:0; overflow:visible;">
+            <div class="div-content-wrap">
+                <!-- ========== 배너 섹션 ========== 
+                     프로젝트 공개 및 펀딩 시작 안내 배너
+                -->
+                <div class="banner-container">
+                    <div class="banner-content-wrap">
+                        <div class="banner-content">
+                            <p class="banner-content-text01">아이디어를 공개하세요.
+펀딩을 시작한 프로젝트는 투자자와의 연결이 자연스럽게 시작됩니다.</p>
+                            <p class="banner-content-text02">
+                                * 프로젝트 성격에 따라 노출 흐름이 달라질 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="banner-content-image">
+                        <img class="banner-image" alt="" src="/image/insight/banner-image.png">
+                    </div>
+                </div>
+                <div class="funding-container">
+                    <div class="funding-wrap">
+                        <div class="search-text-area">
+                            <div class="search-text">
+                                <div class="search-text-inner">
+                                    <p class="search-content">종료된 펀딩</p>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- 공지사항 카드 그리드 -->
+                    <div class="funding-image-area">
+                          <!-- 창업 길잡이 카드 -->
+                        <div class="funding-image-wrap">
+                            <div class="funding-image">
+                                <img src="/image/insight/project-exposure.png" alt="" class="funding-image-inner" style="width: 250px;">
+                            </div>
+                            <div class="funding-image-text">
+                                <div class="image-text-header">
+                                    <div class="header-icon">
+                                        <div class="header-icon-inner" style="border-radius: 2.4px; margin-left: 0px; mask-size: 13.7504px 16px; z-index: 1;">
+                                            <img src="/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
+                                        </div>
+                                    </div>
+                                    <p class="header-text">스타트업 이름</p>
+                                </div>
+                                <div class="image-text-middle">
+                                    <p class="image-text-middle-inner">업무 자동화를 위한 아키텍쳐와 경영자의 의사결정을 돕기 위한 개인 맞춤화 서비스 ai </p>
+                                </div>
+                                <div class="image-text-footer">
+                                    <p class="image-text-footer-inner1">60,000,000원 펀딩성공</p>
+                                    <p class="image-text-footer-inner2">15%</p>
+                                    <p class="image-text-footer-inner3">진행중</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="funding-image-wrap">
+                            <div class="funding-image">
+                                <img src="/image/insight/project-exposure.png" alt="" class="funding-image-inner" style="width: 250px;">
+                            </div>
+                            <div class="funding-image-text">
+                                <div class="image-text-header">
+                                    <div class="header-icon">
+                                        <div class="header-icon-inner" style="border-radius: 2.4px; margin-left: 0px; mask-size: 13.7504px 16px; z-index: 1;">
+                                            <img src="/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
+                                        </div>
+                                    </div>
+                                    <p class="header-text">스타트업 이름</p>
+                                </div>
+                                <div class="image-text-middle">
+                                    <p class="image-text-middle-inner">업무 자동화를 위한 아키텍쳐와 경영자의 의사결정을 돕기 위한 개인 맞춤화 서비스 ai </p>
+                                </div>
+                                <div class="image-text-footer">
+                                    <p class="image-text-footer-inner1">60,000,000원 펀딩성공</p>
+                                    <p class="image-text-footer-inner2">365%</p>
+                                    <p class="image-text-footer-inner3">종료</p>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- 중요 안내 카드 -->
+                        <div class="funding-image-wrap">
+                            <div class="funding-image">
+                                <img src="/image/insight/project-exposure.png" alt="" class="funding-image-inner" style="width: 250px;">
+                            </div>
+                            <div class="funding-image-text">
+                                <div class="image-text-header">
+                                    <div class="header-icon">
+                                        <div class="header-icon-inner" style="border-radius: 2.4px; margin-left: 0px; mask-size: 13.7504px 16px; z-index: 1;">
+                                            <img src="/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
+                                        </div>
+                                    </div>
+                                    <p class="header-text">스타트업 이름</p>
+                                </div>
+                                <div class="image-text-middle">
+                                    <p class="image-text-middle-inner">업무 자동화를 위한 아키텍쳐와 경영자의 의사결정을 돕기 위한 개인 맞춤화 서비스 ai </p>
+                                </div>
+                                <div class="image-text-footer">
+                                    <p class="image-text-footer-inner1">60,000,000원 펀딩성공</p>
+                                    <p class="image-text-footer-inner2">365%</p>
+                                    <p class="image-text-footer-inner3">종료</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="funding-image-wrap">
+                            <div class="funding-image">
+                                <img src="/image/insight/project-exposure.png" alt="" class="funding-image-inner" style="width: 250px;">
+                            </div>
+                            <div class="funding-image-text">
+                                <div class="image-text-header">
+                                    <div class="header-icon">
+                                        <div class="header-icon-inner" style="border-radius: 2.4px; margin-left: 0px; mask-size: 13.7504px 16px; z-index: 1;">
+                                            <img src="/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
+                                        </div>
+                                    </div>
+                                    <p class="header-text">스타트업 이름</p>
+                                </div>
+                                <div class="image-text-middle">
+                                    <p class="image-text-middle-inner">업무 자동화를 위한 아키텍쳐와 경영자의 의사결정을 돕기 위한 개인 맞춤화 서비스 ai </p>
+                                </div>
+                                <div class="image-text-footer">
+                                    <p class="image-text-footer-inner1">60,000,000원 펀딩성공</p>
+                                    <p class="image-text-footer-inner2">365%</p>
+                                    <p class="image-text-footer-inner3">종료</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="funding-image-wrap">
+                            <div class="funding-image">
+                                <img src="/image/insight/project-exposure.png" alt="" class="funding-image-inner" style="width: 250px;">
+                            </div>
+                            <div class="funding-image-text">
+                                <div class="image-text-header">
+                                    <div class="header-icon">
+                                        <div class="header-icon-inner" style="border-radius: 2.4px; margin-left: 0px; mask-size: 13.7504px 16px; z-index: 1;">
+                                            <img src="/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
+                                        </div>
+                                    </div>
+                                    <p class="header-text">스타트업 이름</p>
+                                </div>
+                                <div class="image-text-middle">
+                                    <p class="image-text-middle-inner">업무 자동화를 위한 아키텍쳐와 경영자의 의사결정을 돕기 위한 개인 맞춤화 서비스 ai </p>
+                                </div>
+                                <div class="image-text-footer">
+                                    <p class="image-text-footer-inner1">60,000,000원 펀딩성공</p>
+                                    <p class="image-text-footer-inner2">365%</p>
+                                    <p class="image-text-footer-inner3">종료</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="funding-image-wrap">
+                            <div class="funding-image">
+                                <img src="/image/insight/project-exposure.png" alt="" class="funding-image-inner" style="width: 250px;">
+                            </div>
+                            <div class="funding-image-text">
+                                <div class="image-text-header">
+                                    <div class="header-icon">
+                                        <div class="header-icon-inner" style="border-radius: 2.4px; margin-left: 0px; mask-size: 13.7504px 16px; z-index: 1;">
+                                            <img src="/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
+                                        </div>
+                                    </div>
+                                    <p class="header-text">스타트업 이름</p>
+                                </div>
+                                <div class="image-text-middle">
+                                    <p class="image-text-middle-inner">업무 자동화를 위한 아키텍쳐와 경영자의 의사결정을 돕기 위한 개인 맞춤화 서비스 ai </p>
+                                </div>
+                                <div class="image-text-footer">
+                                    <p class="image-text-footer-inner1">60,000,000원 펀딩성공</p>
+                                    <p class="image-text-footer-inner2">365%</p>
+                                    <p class="image-text-footer-inner3">종료</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="funding-image-wrap">
+                            <div class="funding-image">
+                                <img src="/image/insight/project-exposure.png" alt="" class="funding-image-inner" style="width: 250px;">
+                            </div>
+                            <div class="funding-image-text">
+                                <div class="image-text-header">
+                                    <div class="header-icon">
+                                        <div class="header-icon-inner" style="border-radius: 2.4px; margin-left: 0px; mask-size: 13.7504px 16px; z-index: 1;">
+                                            <img src="/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
+                                        </div>
+                                    </div>
+                                    <p class="header-text">스타트업 이름</p>
+                                </div>
+                                <div class="image-text-middle">
+                                    <p class="image-text-middle-inner">업무 자동화를 위한 아키텍쳐와 경영자의 의사결정을 돕기 위한 개인 맞춤화 서비스 ai </p>
+                                </div>
+                                <div class="image-text-footer">
+                                    <p class="image-text-footer-inner1">60,000,000원 펀딩성공</p>
+                                    <p class="image-text-footer-inner2">365%</p>
+                                    <p class="image-text-footer-inner3">종료</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="funding-image-wrap">
+                            <div class="funding-image">
+                                <img src="/image/insight/project-exposure.png" alt="" class="funding-image-inner" style="width: 250px;">
+                            </div>
+                            <div class="funding-image-text">
+                                <div class="image-text-header">
+                                    <div class="header-icon">
+                                        <div class="header-icon-inner" style="border-radius: 2.4px; margin-left: 0px; mask-size: 13.7504px 16px; z-index: 1;">
+                                            <img src="/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
+                                        </div>
+                                    </div>
+                                    <p class="header-text">스타트업 이름</p>
+                                </div>
+                                <div class="image-text-middle">
+                                    <p class="image-text-middle-inner">업무 자동화를 위한 아키텍쳐와 경영자의 의사결정을 돕기 위한 개인 맞춤화 서비스 ai </p>
+                                </div>
+                                <div class="image-text-footer">
+                                    <p class="image-text-footer-inner1">60,000,000원 펀딩성공</p>
+                                    <p class="image-text-footer-inner2">365%</p>
+                                    <p class="image-text-footer-inner3">종료</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="funding-image-wrap">
+                            <div class="funding-image">
+                                <img src="/image/insight/project-exposure.png" alt="" class="funding-image-inner"  style="width: 250px;">
+                            </div>
+                            <div class="funding-image-text">
+                                <div class="image-text-header">
+                                    <div class="header-icon">
+                                        <div class="header-icon-inner" style="border-radius: 2.4px; margin-left: 0px; mask-size: 13.7504px 16px; z-index: 1;">
+                                            <img src="/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
+                                        </div>
+                                    </div>
+                                    <p class="header-text">스타트업 이름</p>
+                                </div>
+                                <div class="image-text-middle">
+                                    <p class="image-text-middle-inner">업무 자동화를 위한 아키텍쳐와 경영자의 의사결정을 돕기 위한 개인 맞춤화 서비스 ai </p>
+                                </div>
+                                <div class="image-text-footer">
+                                    <p class="image-text-footer-inner1">60,000,000원 펀딩성공</p>
+                                    <p class="image-text-footer-inner2">365%</p>
+                                    <p class="image-text-footer-inner3">종료</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                      <!-- ========== 주제별 보기 섹션 ========== 
+                         비즈니스 주제별 분류 카드
+                         - 기술, 컨텐츠, 교육, AI 및 자동화
+                         - SVG 아이콘 포함
+                    -->
+                    
+                </div>
+            </div>
+            <!-- ========== 하단 컨텐츠 영역 ========== -->
+        </div>
+
+        <div id="modalOverlay" class="modal-overlay" aria-hidden="false"></div>
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+        <div class="modal-container" style="pointer-events: auto;">
+            <div class="modal-wrap">
+                <div class="modal-header">
+                    <div class="modal-header-icon">
+                        <button class="modal-icon">
+                            <div draggable="false" class="modal-icon-inner">
+                                <svg aria-label="icon" color="foregrounds.neutral.tertiary" fill="currentColor" height="18" role="img" width="18" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+                                    <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="modal-inner-context">
+                        <button type="button" class="modal-inner-regist">
+                            <span class="modal-inner-span">저장하기</span>
+                        </button>
+                        <button type="button" class="modal-inner-share">
+                            <span class="modal-inner-span">펀딩하기</span>
+                        </button>
+                    </div>
+                </div>
+                 <!-- 모달 본문 -->
+                <div class="modal-body">
+                    <div class="modal-body-wrap">
+                        <!-- 메인 이미지 -->
+                        <div class="modal-image-banner">
+                            <button id="left-btn" class="left-btn modal-banner-icon">
+                            <div draggable="false" class="modal-icon-inner">
+                                <svg aria-label="icon" color="foregrounds.neutral.tertiary" fill="currentColor" height="18" role="img" width="18" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="modal-banner-image-wrap">
+                        <img src="/image/insight/project-exposure.png" alt="banner-image1" class="modal-banner-image">
+                        <img src="/image/insight/project-exposure.png" alt="banner-image2" class="modal-banner-image">
+                        <img src="/image/insight/project-exposure.png" alt="banner-image3" class="modal-banner-image">
+                        <img src="/image/insight/project-exposure.png" alt="banner-image4" class="modal-banner-image">
+                        <img src="/image/insight/project-exposure.png" alt="banner-image5" class="modal-banner-image">
+                        </div>
+                        <button id="right-btn" class="modal-banner-icon">
+                            <div draggable="false" class="modal-icon-inner">
+                                <svg aria-label="icon" color="foregrounds.neutral.tertiary" fill="currentColor" height="18" role="img" width="18" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                                </svg>
+                            </div>
+                        </button>
+                        </div> 
+                        <!-- 태그 영역 -->
+                        <div class="modal-body-inner01">
+                            <div class="modal-body-nwcf">
+                                <span class="nwcf-span">52명 참여</span>
+                            </div>
+                            <div class="modal-body-nwcf">
+                                <span class="nwcf-span">달성률 : 150%</span>
+                            </div>
+                            <div class="modal-body-nwcf">
+                                <span class="nwcf-span">목표 금액 : 60,000,000원</span>
+                            </div>
+                            <!-- <div class="modal-body-nwcf">
+                                <span class="nwcf-span">컨퍼런스</span>
+                            </div>   -->
+                        </div>
+                        <!-- 제목 -->
+                        <div class="modal-body-title">
+                            <div class="modal-body-title-start">
+                                <div class="modal-body-title-end">
+                                    <p class="modal-body-title-content">프로젝트 이름</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 이벤트 정보 섹션 -->
+                        <div class="modal-body-column">
+                            <!-- 호스트 정보 -->
+                            <div class="modal-body-column-inner">
+                                <div class="hdlt">
+                                    <p class="hdlt-text">팀 이름</p>
+                                </div>
+                                <div class="hdlt-content">
+                                    <div class="hdlt-content-column">
+                                        <p class="hdlt-content-p">엔비디아</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 호스트 정보 -->
+                            <div class="modal-body-column-inner">
+                                <div class="hdlt">
+                                    <p class="hdlt-text">목표 금액</p>
+                                </div>
+                                <div class="hdlt-content">
+                                    <div class="hdlt-content-column">
+                                        <p class="hdlt-content-p">50,000,000원</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 게시 일시 -->
+                            <div class="modal-body-column-inner">
+                                <div class="hdlt">
+                                    <p class="hdlt-text">펀딩 기간</p>
+                                </div>
+                                <div class="hdlt-content">
+                                    <div class="hdlt-content-column">
+                                        <p class="hdlt-content-p">2026년 1월 19일 월요일</p>
+                                        <!-- <p class="hdlt-content-p-second">오후 7:00 - 오후 9:00 (대한민국 표준시)</p> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="modal-body-column-inner">
+                                <div class="hdlt">
+                                    <p class="hdlt-text">위치</p>
+                                </div>
+                                <div class="hdlt-content">
+                                    <div class="hdlt-content-column">
+                                        <p class="hdlt-content-p">위치 미정</p>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                             <!-- 주제 -->
+                            <div class="modal-body-column-inner">
+                                <div class="hdlt">
+                                    <p class="hdlt-text">카테고리</p>
+                                </div>
+                                <div class="hdlt-content">
+                                    <div class="hdlt-content-column">
+                                        <p class="hdlt-content-p">창업, 스타트업, 지원사업</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                          <!-- ========== 공지사항 내용 섹션 ========== -->
+                        <div data-section-id="overview" class="modal-body-elh">
+                            <div class="elh-title">
+                                <div class="elh-title-inner">
+                                    <div class="elh-title-content">
+                                        <span class="elh-span">프로젝트 스토리</span>
+                                    </div>
+                                </div>
+                                <div width="100%">
+                                    <div class="elh-underbar"></div>
+                                </div>
+                            </div>
+                            <div class="elh-content-wrap">
+                                <div class="elt-content">
+                                    <p>
+                                        이 문장은 사실 아무 의미도 없습니다.
+                                        여기까지 읽었다면 이미 낚이셨습니다.
+                                        로딩 중인 것처럼 보이지만 그냥 텍스트입니다.
+                                        개발자는 지금 커피를 마시러 갔을지도 모릅니다.
+                                        이 문장은 당신의 스크롤을 테스트하고 있습니다.
+                                        중요한 내용인 척하지만 전혀 중요하지 않습니다.
+                                        여기엔 아무것도 없는데 계속 보게 되죠.
+                                        디자인 팀이 “일단 채워”라고 해서 생겼습니다.
+                                        읽고 계신 지금도 시간은 흐르고 있습니다.
+                                        이 줄을 읽으면 생산성이 0.01% 감소합니다.
+                                        사실 이 문장은 이전 문장을 질투합니다.
+                                        빈 공간이 외로워서 글자를 넣어봤습니다.
+                                        이 텍스트는 야망 없이 태어났습니다.
+                                        스크롤을 멈추면 이 문장은 잊혀집니다.
+                                        아직도 읽고 계신가요? 대단합니다.
+                                        이쯤 되면 그냥 끝까지 보실 것 같습니다.
+                                        여긴 테스트용이지만 감정은 있습니다.
+                                        아무 말 대잔치에 오신 것을 환영합니다.
+                                        이 줄은 줄 수를 맞추기 위해 존재합니다.
+                                        의미 없는 문장도 줄을 채우면 그럴듯합니다.
+                                        누군가는 이 문장을 UX라고 부를지도 모릅니다.
+                                        이 텍스트는 자신이 왜 여기 있는지 모릅니다.
+                                        스크롤 휠이 열일하고 있습니다.
+                                        거의 다 왔습니다. 조금만 더 버텨주세요.
+                                        여기까지 읽은 분은 성실합니다.
+                                        이 문장은 마지막에서 두 번째입니다.
+                                        마지막인 척하지만 아닐 수도 있습니다.
+                                        사실 이 줄도 별 의미는 없습니다.
+                                        이제 정말 끝이 보입니다.
+                                        수고하셨습니다. 이 텍스트는 임무를 다했습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                          <!-- ========== 관련 콘텐츠 섹션 ========== -->
+                        <div data-section-id="location" class="modal-body-elh">
+                            <div class="elh-title">
+                                <div class="elh-title-inner">
+                                    <div class="elh-title-content">
+                                        <span class="elh-span">프로젝트 상세</span>
+                                    </div>
+                                </div>
+                                <div width="100%">
+                                    <div class="elh-underbar"></div>
+                                </div>
+                            </div>
+                            <div class="elh-content-wrap">
+                                <div class="elt-content"> 
+                                    <img src="/image/funding/detail_page.png" alt="" style="width: 550px; height: auto; object-fit: cover;">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ========== 주최자 정보 섹션 ========== -->
+                        <div data-section-id="sponsor" class="modal-body-elh">
+                            <div class="elh-title">
+                                <div class="elh-title-inner">
+                                    <div class="elh-title-content">
+                                        <span class="elh-span">컨퍼런스</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div width="100%">
+                                    <div class="elh-underbar"></div>
+                                </div>
+                            <div class="elh-content-wrap">
+                                <div class="elt-content">
+                                    <span class="elt-content-p" style="font-size: 12px;line-height: 16px;">주최</span>
+                                    <span class="elt-content-span" style="font-size: 13px;line-height: 18px;">중소기업벤처</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 이벤트 div (추가 기능용) -->
+        <div class="event-div"></div>
+
+        <svg style="display: none;"><symbol id="home-simple-2-solid" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M10.92 3.81a1.8 1.8 0 0 1 2.16 0l7 5.25c.453.34.72.873.72 1.44V19a1.8 1.8 0 0 1-1.8 1.8h-4a1.8 1.8 0 0 1-1.8-1.8v-3a.2.2 0 0 0-.2-.2h-2a.2.2 0 0 0-.2.2v3A1.8 1.8 0 0 1 9 20.8H5A1.8 1.8 0 0 1 3.2 19v-8.5c0-.567.267-1.1.72-1.44z" clip-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="globe-earth-2-solid" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2.2c1.093 0 2.144.182 3.126.512v1.362c0 .622-.504 1.126-1.126 1.126h-.5a2.3 2.3 0 0 0-2.3 2.3V8a.2.2 0 0 1-.2.2A1.8 1.8 0 0 0 9.2 10v1a2.8 2.8 0 0 0 2.8 2.8h2a1.2 1.2 0 0 1 1.2 1.2 2.8 2.8 0 0 0 2.604 2.793h2.1A9.78 9.78 0 0 1 12 21.8c-.067 0-.134-.005-.2-.006V18.5a2.31 2.31 0 0 0-2.313-2.3.686.686 0 0 1-.687-.674c0-.524-.181-1.034-.514-1.44L3.144 7.8A9.8 9.8 0 0 1 12 2.2M7.048 15.1c.098.12.152.27.152.426A2.285 2.285 0 0 0 9.487 17.8c.396 0 .713.323.713.7v3.132c-4.552-.846-8-4.835-8-9.632 0-.846.106-1.666.308-2.45zm9.495-11.784A9.8 9.8 0 0 1 21.8 12a9.76 9.76 0 0 1-.945 4.2l-1.811.001H18A1.2 1.2 0 0 1 16.8 15a2.8 2.8 0 0 0-2.8-2.8h-2a1.2 1.2 0 0 1-1.2-1.2v-1c0-.11.09-.2.2-.2A1.8 1.8 0 0 0 12.8 8v-.5a.7.7 0 0 1 .7-.7h.5a2.543 2.543 0 0 0 2.543-2.543z" clip-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="users-group-3-solid" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M7 8a5 5 0 1 1 10 0A5 5 0 0 1 7 8M5 18a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v1a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2zm13.998-9.829a6.97 6.97 0 0 1-1.613 4.301l.016.028a6 6 0 0 1 2.02 1.444Q19.704 14 20 14a3 3 0 1 0-1.002-5.829M21 19q-.002.519-.126 1H23a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-.803c.51.883.803 1.907.803 3zM3 18c0-1.093.292-2.117.803-3H3a3 3 0 0 0-3 3v1a1 1 0 0 0 1 1h2.126A4 4 0 0 1 3 19zm1.578-4.056a6 6 0 0 1 2.02-1.444l.017-.028a6.97 6.97 0 0 1-1.613-4.3 3 3 0 1 0-.424 5.773" clip-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="book-open-solid" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M2.494 5.984c3.17-2.59 6.57-1.899 8.706-.815v14.243c-1.651-1.105-4.81-2.15-7.694.208A.8.8 0 0 1 2.2 19V6.603a.8.8 0 0 1 .294-.62M12.8 5.169c2.136-1.084 5.536-1.776 8.706.815a.8.8 0 0 1 .294.619V19a.8.8 0 0 1-1.306.62c-2.884-2.358-6.043-1.313-7.694-.208z" clip-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="comments-solid" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M9.2 12A2.8 2.8 0 0 1 12 9.2h7a2.8 2.8 0 0 1 2.8 2.8v9a.8.8 0 0 1-1.244.666L18.06 20a1.2 1.2 0 0 0-.666-.201H12A2.8 2.8 0 0 1 9.2 17zM12 2.2A2.8 2.8 0 0 1 14.8 5v2.6H12A4.4 4.4 0 0 0 7.6 12v.8h-.995c-.236 0-.468.07-.665.202l-2.497 1.664A.8.8 0 0 1 2.2 14V5A2.8 2.8 0 0 1 5 2.2z" clip-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="telescope-solid" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M16.188 2.307a.8.8 0 0 1 1.093.293l4 6.928a.8.8 0 0 1-1.386.8l-.1-.173-5.369 3.1a1.8 1.8 0 0 1-1.897-.06l-1.818 1.05 2.988 5.366a.8.8 0 0 1-1.398.778l-2.57-4.614-1.895 4.534a.8.8 0 0 1-1.476-.617l1.617-3.868-.113.065a1.8 1.8 0 0 1-1.897-.06l-1.201.694a1.8 1.8 0 1 1-1.8-3.118l1.201-.693a1.8 1.8 0 0 1 .897-1.673l4.665-2.693a1.8 1.8 0 0 1 .897-1.673l5.37-3.1-.1-.173a.8.8 0 0 1 .292-1.093" clip-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="layout-sidebar-left-outline" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M6 4.8A1.2 1.2 0 0 0 4.8 6v12A1.2 1.2 0 0 0 6 19.2h3.2V4.8zm4.8 0v14.4H18a1.2 1.2 0 0 0 1.2-1.2V6A1.2 1.2 0 0 0 18 4.8zM3.2 6A2.8 2.8 0 0 1 6 3.2h12A2.8 2.8 0 0 1 20.8 6v12a2.8 2.8 0 0 1-2.8 2.8H6A2.8 2.8 0 0 1 3.2 18z" fill-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="bell-outline" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 1.2a.8.8 0 0 1 .8.8v1.236c2.215.202 3.71 1.242 4.65 2.547C18.467 7.198 18.8 8.872 18.8 10v3c0 1.499.313 2.32.607 2.744.294.422.565.456.593.456a.8.8 0 0 1 0 1.6h-4.2v.2a4.15 4.15 0 0 1-.75 2.342c-.6.831-1.59 1.458-3.05 1.458s-2.45-.627-3.05-1.458A4.15 4.15 0 0 1 8.2 18v-.2H4a.8.8 0 0 1 0-1.6c.028 0 .3-.034.593-.456.294-.423.607-1.245.607-2.744v-3c0-2.66 1.127-4.4 2.583-5.45 1.109-.798 2.377-1.174 3.417-1.3V2a.8.8 0 0 1 .8-.8m-5.827 15h11.654c-.382-.766-.627-1.822-.627-3.2v-3c0-.872-.268-2.198-1.05-3.283C15.4 5.673 14.14 4.8 12 4.8c-.872 0-2.198.268-3.283 1.05C7.673 6.6 6.8 7.86 6.8 10v3c0 1.377-.245 2.434-.627 3.2M9.8 17.8v.2c0 .372.118.948.45 1.408.3.419.81.792 1.75.792s1.45-.373 1.75-.792A2.55 2.55 0 0 0 14.2 18v-.2z" fill-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="login-outline" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M8.2 3a.8.8 0 0 1 .8-.8h8A2.8 2.8 0 0 1 19.8 5v14a2.8 2.8 0 0 1-2.8 2.8H9a.8.8 0 0 1 0-1.6h8a1.2 1.2 0 0 0 1.2-1.2V5A1.2 1.2 0 0 0 17 3.8H9a.8.8 0 0 1-.8-.8m2.234 4.434a.8.8 0 0 1 1.132 0l4 4a.8.8 0 0 1 0 1.132l-4 4a.8.8 0 0 1-1.132-1.132L13.07 12.8H5a.8.8 0 0 1 0-1.6h8.069l-2.635-2.634a.8.8 0 0 1 0-1.132" fill-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="user-outline" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 3.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4M7.2 7a4.8 4.8 0 1 1 9.6 0 4.8 4.8 0 0 1-9.6 0M9 15.8A3.2 3.2 0 0 0 5.8 19v2a.8.8 0 0 1-1.6 0v-2A4.8 4.8 0 0 1 9 14.2h6a4.8 4.8 0 0 1 4.8 4.8v2a.8.8 0 0 1-1.6 0v-2a3.2 3.2 0 0 0-3.2-3.2z" fill-rule="evenodd"></path></symbol></svg>
+    </div>
+</div>
+<script src="/js/funding/funding-list-page.js"></script>
+</body>
+</html>
