@@ -27,7 +27,7 @@ public class MemberController {
     @PostMapping("join")
     public RedirectView join(MemberDTO memberDTO){
         memberService.join(memberDTO);
-        return new RedirectView("member/login");
+        return new RedirectView("login");
     }
 //    이메일 체크
     @GetMapping("check-email")
