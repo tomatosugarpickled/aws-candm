@@ -97,7 +97,7 @@ public class MyPageService {
 //    활동 등록(이미지 포함)
     public void regist(MemberActivityDTO memberActivityDTO, ArrayList<MultipartFile> multipartFiles){
         log.info("input : {},,,,,,,,,,,,,,", memberActivityDTO);
-        String rootPath = "C:/file/";
+        String rootPath = "/home/ubuntu/upload";
         String todayPath = getTodayPath();
         String path = rootPath + todayPath;
 
@@ -195,7 +195,7 @@ public class MyPageService {
 //    ============================================ 프로필 등록 =========================================================
 
     public void profileRegist(Long memberId, MultipartFile multipartFile ){
-        String rootPath = "C:/file/";
+        String rootPath = "/home/ubuntu/upload";
         String todayPath = getTodayPath();
         String path = rootPath + todayPath;
 

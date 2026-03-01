@@ -36,7 +36,6 @@ public class MemberService {
     public void kakaoJoin(MemberDTO memberDTO){
         memberDTO.setProvider(Provider.KAKAO);
         memberDAO.saveKakao(memberDTO);
-        log.info("{},,,,,,,,,,,,,,,memberservice",memberDTO);
         memberDAO.saveOauth(memberDTO.toOauthVO());
     }
 
