@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/funding")
+@RequestMapping("/funding/**")
 @RequiredArgsConstructor
 @Slf4j
 public class FundingController {
@@ -35,7 +35,7 @@ public class FundingController {
         model.addAttribute("fundingDTO", dto);
         log.info("fundingDTO = {}.................", dto);
 
-        return "/funding/funding-regist-page";
+        return "funding/funding-regist-page";
 
     }
 
@@ -49,7 +49,7 @@ public class FundingController {
         }
         redirectAttributes.addAttribute("teamId", fundingDTO.getTeamId());
         //  funding/funding-list 로 이동
-        return new RedirectView("/funding/funding-list-page");
+        return new RedirectView("funding/funding-list-page");
     }
 
     /* ================= 펀딩 목록 ================= */
@@ -59,7 +59,7 @@ public class FundingController {
         List<FundingDTO> fundingList = teamId != null ? fundingService.getListByTeam(teamId) : List.of();
         model.addAttribute("fundingList", fundingList);
         model.addAttribute("teamId", teamId);
-        return "/funding/funding-list-page";
+        return "funding/funding-list-page";
     }
     /*====================파일============================*/
     @PostMapping("write")
@@ -67,6 +67,6 @@ public class FundingController {
                               @RequestParam("file") ArrayList<MultipartFile> multipartFiles){
 
         fundingService.write(fundingDTO, multipartFiles);
-        return new RedirectView("/post/list");
+        return new RedirectView("post/list");
     }
 }

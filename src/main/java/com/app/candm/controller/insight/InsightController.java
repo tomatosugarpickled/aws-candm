@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/insight")
+@RequestMapping("/insight/**")
 public class InsightController {
 
     @GetMapping("")

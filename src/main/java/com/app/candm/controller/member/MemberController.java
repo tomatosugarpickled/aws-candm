@@ -27,7 +27,7 @@ public class MemberController {
     @PostMapping("join")
     public RedirectView join(MemberDTO memberDTO){
         memberService.join(memberDTO);
-        return new RedirectView("/member/login");
+        return new RedirectView("member/login");
     }
 //    이메일 체크
     @GetMapping("check-email")
@@ -54,13 +54,13 @@ public class MemberController {
 //    카카오 추가정보 입력으로 이동
     @GetMapping("kakao-join")
     public String GotoKakaoJoinForm(){
-        return "/member/kakao-join";
+        return "member/kakao-join";
     }
 
     @PostMapping("kakao-join")
     public RedirectView kakaoJoin(MemberDTO memberDTO){
         memberService.kakaoJoin(memberDTO);
-        return new RedirectView("/main");
+        return new RedirectView("main");
     }
 
 //    로그아웃
@@ -69,7 +69,7 @@ public class MemberController {
         log.info("{들어옴}");
         log.info(session.toString());
         session.invalidate();
-        return new RedirectView("/member/login");
+        return new RedirectView("member/login");
     }
 
 }
