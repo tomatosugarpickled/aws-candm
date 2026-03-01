@@ -51,7 +51,6 @@ passwordConfirm.addEventListener("blur", (e) => {
 
 
 const allInputs = document.querySelectorAll("input");
-console.log(allInputs);
 
 button.addEventListener("click", (e) => {
     e.preventDefault();
