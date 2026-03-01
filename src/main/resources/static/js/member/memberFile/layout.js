@@ -16,7 +16,7 @@ const profileLayout = (() => {
 
         // 3. FileController의 display 메서드를 호출하는 URL 생성
         // 쿼리 스트링(?filePath=...&fileName=...) 형식으로 보내야 합니다.
-        const displayUrl = `/home/ubuntu/upload/display?filePath=${filePath}&fileName=${fileName}`;
+        const displayUrl = `/api/files/display?filePath=${filePath}&fileName=${fileName}`;
 
             image = `<img src="${displayUrl}" alt="profile-img" class="park-img">`
 
