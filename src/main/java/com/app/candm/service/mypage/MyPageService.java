@@ -180,7 +180,7 @@ public class MyPageService {
 //        memberActivityDAO.delete(id);
         List<MemberActivityFileDTO> files = memberActivityFileDAO.findAllByMemberId(id);
         files.forEach(memberActivityFileDTO -> {
-            File file = new File("C:/file/" + memberActivityFileDTO.getFilePath(), memberActivityFileDTO.getFileName());
+            File file = new File("/home/ubuntu/upload" + memberActivityFileDTO.getFilePath(), memberActivityFileDTO.getFileName());
                 if(file.exists()){
                     file.delete();
                     }
