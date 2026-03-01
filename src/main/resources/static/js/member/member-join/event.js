@@ -7,12 +7,11 @@ let emailCheck = false;
 let passwordCheck = false;
 let temp = errorInput.style.cssText;
 
-console.log(button)
+
 
 emailInput.addEventListener("blur", (e) => {
     memberService.checkEmail(e.target.value, (isAvailable) => {
         check = isAvailable;
-        console.log(isAvailable)
         if(check){
             if(dupicationMessage){
                 dupicationMessage.style.display = "none";
