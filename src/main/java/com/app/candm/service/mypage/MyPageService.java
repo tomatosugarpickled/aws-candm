@@ -99,7 +99,7 @@ public class MyPageService {
         log.info("input : {},,,,,,,,,,,,,,", memberActivityDTO);
         String rootPath = "/home/ubuntu/upload";
         String todayPath = getTodayPath();
-        String path = rootPath + todayPath;
+        String path = rootPath + "/" + todayPath;
 
         FileDTO fileDTO = new FileDTO();
         MemberActivityFileDTO memberActivityFileDTO = new MemberActivityFileDTO();
@@ -197,7 +197,7 @@ public class MyPageService {
     public void profileRegist(Long memberId, MultipartFile multipartFile ){
         String rootPath = "/home/ubuntu/upload";
         String todayPath = getTodayPath();
-        String path = rootPath + todayPath;
+        String path = rootPath + "/" + todayPath;
 
         FileDTO fileDTO = new FileDTO();
         MemberFileDTO memberFileDTO = new MemberFileDTO();
