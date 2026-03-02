@@ -1,6 +1,6 @@
 // 공지사항 이미지 클릭시 modal 오른쪽에서 나오는 js
-const openBtn = document.querySelectorAll(".center");
-const clickBoxes = document.querySelectorAll(".find-box-body");
+const openBtn = document.querySelectorAll(".only");
+// const clickBoxes = document.querySelectorAll(".find-box-body");
 const modal = document.getElementById("modal");
 const overlay = document.getElementById("modalOverlay");
 const closeBtn = document.querySelector(".modal-icon");
