@@ -34,7 +34,7 @@ const messageRoomLayout = (() => {
                      <div class="userTab-container active">
                         <div class="userTab-left">
                             <div class="userTab-img">
-                                <img src="../../static/image/ex/ex_profile.png" alt="프로필">
+                                <img src="/image/profiles/basicprofile.jpg" alt="프로필">
                             </div>
                         </div>
                         <div class="userTab-right">

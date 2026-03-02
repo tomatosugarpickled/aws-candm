@@ -33,7 +33,7 @@ const followListLayout = (() => {
             text += `
                 <div class="follower-item">
                     <div class="follower-item-avatar">
-                        <img src="https://i.pravatar.cc/150?img=33" alt="김에디">
+                        <img src="/image/profiles/basicprofile.jpg" alt="follower">
                     </div>
                     <div class="follower-item-info">
                         <div class="follower-item-name">

@@ -58,7 +58,7 @@ selects.forEach((select, i) => {
 const removeBoxes = document.querySelectorAll(".shadow-menu");
 const removeMenu = document.querySelector(".div-container");
 
-removeMenu.addEventListener("scroll", (e) => {
+window.addEventListener("scroll", (e) => {
     removeBoxes.forEach((removeBox, i) => {
         removeBoxes[i].style.opacity = 0;
     });
