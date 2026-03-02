@@ -4,27 +4,27 @@ const modal = document.getElementById("modal");
 const overlay = document.getElementById("modalOverlay");
 const closeBtn = document.querySelector(".modal-icon");
 
-openBtn.forEach((openBtn) =>
-    openBtn.addEventListener("click", (e) => {
-        modal.classList.add("open");
-        overlay.classList.add("open");
-        document.body.style.overflow = "hidden";
-    }),
-);
-
-clickBoxes.forEach((clickBox) =>
-    clickBox.addEventListener("click", (e) => {
-        modal.classList.add("open");
-        overlay.classList.add("open");
-        document.body.style.overflow = "hidden";
-    }),
-);
-
-closeBtn.addEventListener("click", (e) => {
-    modal.classList.remove("open");
-    overlay.classList.remove("open");
-    document.body.style.overflow = "";
-});
+// openBtn.forEach((openBtn) =>
+//     openBtn.addEventListener("click", (e) => {
+//         modal.classList.add("open");
+//         overlay.classList.add("open");
+//         document.body.style.overflow = "hidden";
+//     }),
+// );
+//
+// clickBoxes.forEach((clickBox) =>
+//     clickBox.addEventListener("click", (e) => {
+//         modal.classList.add("open");
+//         overlay.classList.add("open");
+//         document.body.style.overflow = "hidden";
+//     }),
+// );
+//
+// closeBtn.addEventListener("click", (e) => {
+//     modal.classList.remove("open");
+//     overlay.classList.remove("open");
+//     document.body.style.overflow = "";
+// });
 
 // 모달 배너 클릭시 이미지 이동
 
