@@ -69,7 +69,7 @@ public class MemberController {
         log.info("{들어옴}");
         log.info(session.toString());
         session.invalidate();
-        return new RedirectView("member/login");
+        return new RedirectView("/main");
     }
 
 }
