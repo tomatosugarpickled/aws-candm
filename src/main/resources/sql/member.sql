@@ -20,3 +20,16 @@ values ('2', '12451@gmail.com', '24414', '박하민', '010-21321-3123', 'inactiv
 select *
 from tbl_member join tbl_member_career
 on tbl_member.id = tbl_member_career.member_id;
+
+INSERT INTO tbl_member (member_email, member_password, member_name, member_phone_number, member_status)
+VALUES
+    ('hong_gd@naver.com', 'pwd1234!', '홍길동', '01012341234', 'active'),
+    ('kim_chulsoo@gmail.com', 'chulsoo77', '김철수', '01023452345', 'active'),
+    ('lee_younghee@daum.net', 'yh09087', '이영희', '01034563456', 'active'),
+    ('park_miso@outlook.com', 'miso111', '박미소', '01045674567', 'active'),
+    ('choi_gang@yahoo.com', 'gangpass', '최강', '01056785678', 'inactive'),
+    ('jung_hye@naver.com', 'hye0000', '정혜', '01067896789', 'active'),
+    ('kang_min@gmail.com', 'min999', '강민', '01078907890', 'active'),
+    ('yoon_seo@daum.net', 'seo1234', '윤서', '01089018901', 'active'),
+    ('lim_jae@naver.com', 'jae555', '임재', '01090129012', 'active'),
+    ('han_sol@gmail.com', 'solstar', '한솔', '01001230123', 'active');

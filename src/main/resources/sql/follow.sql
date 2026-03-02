@@ -19,7 +19,7 @@ where f.following_id = 5
  ;
 
 insert into tbl_follow(follower_id, following_id)
-values (10, 5);
+values (16, 8);
 
 
 select *

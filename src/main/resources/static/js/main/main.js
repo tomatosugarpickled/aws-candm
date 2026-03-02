@@ -1,6 +1,6 @@
 // 쿼리는 폴이치 바로 가능 겟엘레멘탈은 선언해줘야함
 // 카테고리 파츠들 클릭하면 검은색으로 나머진 하얀색으로
-const iconLinks = document.querySelectorAll("a[href=parts]");
+const iconLinks = document.querySelectorAll(".link-page");
 let tempContainer = iconLinks[0].firstElementChild.firstElementChild;
 let tempSvg = tempContainer.firstElementChild;
 
