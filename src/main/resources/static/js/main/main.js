@@ -213,3 +213,9 @@ const linkTag = document.querySelector(".profile-login-button-text")
 myPageBtn.addEventListener("click", (e) => {
     linkTag.click();
 })
+
+const moreBtn = document.querySelector(".more-button")
+moreBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    alert("추후 업데이트 예정")
+})

@@ -2022,6 +2022,7 @@ a {
     flex: 1 0 0;
     align-self: stretch;
     width: 100%;
+    gap: 15px;
 }
 
 .banner {
@@ -2039,6 +2040,7 @@ a {
     border: 1px solid;
     width: 100%;
     display: flex;
+    left: 43px;
 }
 
 .banner-img {
