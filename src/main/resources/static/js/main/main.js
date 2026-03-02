@@ -18,6 +18,8 @@ iconLinks.forEach((iconLink) => {
 
         container.style.backgroundColor = "black";
         svg.style.fill = "white";
+
+        location.href = iconLink.href;
     });
 });
 
