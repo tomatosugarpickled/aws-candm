@@ -13,13 +13,13 @@ openBtn.forEach((openBtn) =>
     }),
 );
 
-clickBoxes.forEach((clickBox) =>
-    clickBox.addEventListener("click", (e) => {
-        modal.classList.add("open");
-        overlay.classList.add("open");
-        document.body.style.overflow = "hidden";
-    }),
-);
+// clickBoxes.forEach((clickBox) =>
+//     clickBox.addEventListener("click", (e) => {
+//         modal.classList.add("open");
+//         overlay.classList.add("open");
+//         document.body.style.overflow = "hidden";
+//     }),
+// );
 
 closeBtn.addEventListener("click", (e) => {
     modal.classList.remove("open");
