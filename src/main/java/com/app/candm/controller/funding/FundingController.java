@@ -35,7 +35,7 @@ public class FundingController {
         model.addAttribute("fundingDTO", dto);
         log.info("fundingDTO = {}.................", dto);
 
-        return "/funding/funding-regist-page";
+        return "funding/funding-regist-page";
 
     }
 

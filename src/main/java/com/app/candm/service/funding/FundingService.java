@@ -58,7 +58,7 @@ public class FundingService {
 
     // 파일
     public void write(FundingDTO fundingDTO, ArrayList<MultipartFile> multipartFiles) {
-        String rootPath = "C:/file/";
+        String rootPath = "/home/ubuntu/upload";
         String todayPath = getTodayPath();
         String path = rootPath + todayPath;
 
