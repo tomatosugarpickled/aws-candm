@@ -1,20 +1,20 @@
 // 파일업로드 버튼 클릭시 input에 파일업로더 클릭
 const fileInputF = document.getElementById("input05");
-const fileInputS = document.getElementById("input06");
+// const fileInputS = document.getElementById("input06");
 const uploadBtnF = document.getElementById("upload_button01");
-const uploadBtnS = document.getElementById("upload_button02");
+// const uploadBtnS = document.getElementById("upload_button02");
 
 uploadBtnF.addEventListener("click", (e) => {
     fileInputF.click();
 });
 
-    uploadBtnS.addEventListener("click", (e) => {
-    fileInputS.click();
-});
+//     // uploadBtnS.addEventListener("click", (e) => {
+//     // fileInputS.click();
+// });
 
 // 이미지 미리보기
 const previewF = document.getElementById("imagePreviewF");
-const previewS = document.getElementById("imagePreviewS");
+// const previewS = document.getElementById("imagePreviewS");
 
 // 파일이 선택되었을 때 실행하는 이벤트
 fileInputF.addEventListener("change", (e) => {
@@ -52,30 +52,30 @@ fileInputF.addEventListener("change", (e) => {
     });
 });
 
-fileInputS.addEventListener("change", (e) => {
-    previewS.innerHTML = "";
-
-    const files = Array.from(fileInputS.files);
-
-    files.forEach((file) => {
-        if (!file.type.startsWith("image/")) return;
-
-        const reader = new FileReader();
-
-        reader.onload = (e) => {
-            const img = document.createElement("img");
-            img.src = e.target.result;
-            img.style.width = "120px";
-            img.style.height = "120px";
-            img.style.objectFit = "cover";
-            img.style.borderRadius = "8px";
-            img.style.marginRight = "8px";
-
-            previewS.appendChild(img);
-        };
-        reader.readAsDataURL(file);
-    });
-});
+// fileInputS.addEventListener("change", (e) => {
+//     previewS.innerHTML = "";
+//
+//     const files = Array.from(fileInputS.files);
+//
+//     files.forEach((file) => {
+//         if (!file.type.startsWith("image/")) return;
+//
+//         const reader = new FileReader();
+//
+//         reader.onload = (e) => {
+//             const img = document.createElement("img");
+//             img.src = e.target.result;
+//             img.style.width = "120px";
+//             img.style.height = "120px";
+//             img.style.objectFit = "cover";
+//             img.style.borderRadius = "8px";
+//             img.style.marginRight = "8px";
+//
+//             previewS.appendChild(img);
+//         };
+//         reader.readAsDataURL(file);
+//     });
+// });
 
 // input값 없을 시 blur이벤트로 div출현하게 하는 js
 const errordiv = document.querySelectorAll(
