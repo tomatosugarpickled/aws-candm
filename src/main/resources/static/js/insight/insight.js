@@ -1,5 +1,5 @@
 // 공지사항 이미지 클릭시 modal 오른쪽에서 나오는 js
-const openBtn = document.querySelectorAll(".event-image");
+const openBtn = document.querySelectorAll(".center");
 const clickBoxes = document.querySelectorAll(".find-box-body");
 const modal = document.getElementById("modal");
 const overlay = document.getElementById("modalOverlay");
@@ -56,7 +56,7 @@ selects.forEach((select, i) => {
 
 // 필터 div박스 이동이나 스크롤 시 사라지게
 const removeBoxes = document.querySelectorAll(".shadow-menu");
-const removeMenu = document.querySelector(".div-content-wrap-bottom");
+const removeMenu = document.querySelector(".center");
 
 removeMenu.addEventListener("scroll", (e) => {
     removeBoxes.forEach((removeBox, i) => {
