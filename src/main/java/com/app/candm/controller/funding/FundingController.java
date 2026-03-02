@@ -28,7 +28,7 @@ public class FundingController {
 
     /* ================= 펀딩 등록 ================= */
 
-    @GetMapping("/funding-regist-page")
+    @GetMapping("funding-regist-page")
     public String goToRegisterForm(@RequestParam("teamId") Long teamId, Model model) {
         FundingDTO dto = new FundingDTO();
         dto.setTeamId(teamId);
@@ -39,7 +39,7 @@ public class FundingController {
 
     }
 
-    @PostMapping("/funding-regist-page")
+    @PostMapping("funding-regist-page")
     public RedirectView register(FundingDTO fundingDTO, @RequestParam(value = "file", required = false) ArrayList<MultipartFile> files, RedirectAttributes redirectAttributes) {
         log.info("fundingDTO = .............{}", fundingDTO);
         fundingService.register(fundingDTO);
