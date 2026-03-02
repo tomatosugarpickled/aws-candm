@@ -180,7 +180,7 @@
 .funding-image-wrap {
     flex-shrink: 0;
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
     cursor: pointer;
     padding: 16px;
     gap: 12px;
