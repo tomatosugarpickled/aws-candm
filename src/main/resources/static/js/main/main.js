@@ -105,7 +105,7 @@ foldContent.addEventListener("click", (e) => {
 const loginIcon2 = document.querySelector(".login-icon2");
 const modalPark = document.querySelector(".modal-park");
 
-modalPark.style.display = "none";
+
 
 loginIcon2.addEventListener("click", (e) => {
     if (modalPark.style.display === "none") {
