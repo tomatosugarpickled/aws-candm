@@ -54,13 +54,13 @@ public class MemberController {
 //    카카오 추가정보 입력으로 이동
     @GetMapping("kakao-join")
     public String GotoKakaoJoinForm(){
-        return "kakao-join";
+        return "member/kakao-join";
     }
 
     @PostMapping("kakao-join")
     public RedirectView kakaoJoin(MemberDTO memberDTO){
         memberService.kakaoJoin(memberDTO);
-        return new RedirectView("main");
+        return new RedirectView("/main");
     }
 
 //    로그아웃
