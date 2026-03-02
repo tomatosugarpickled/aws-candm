@@ -56,9 +56,9 @@ selects.forEach((select, i) => {
 
 // 필터 div박스 이동이나 스크롤 시 사라지게
 const removeBoxes = document.querySelectorAll(".shadow-menu");
-const removeMenu = document.querySelector(".div-container");
+const removeMenu = document.querySelector(".div-content-wrap-bottom");
 
-window.addEventListener("scroll", (e) => {
+removeMenu.addEventListener("scroll", (e) => {
     removeBoxes.forEach((removeBox, i) => {
         removeBoxes[i].style.opacity = 0;
     });
