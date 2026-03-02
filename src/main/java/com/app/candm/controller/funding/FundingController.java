@@ -28,18 +28,18 @@ public class FundingController {
 
     /* ================= 펀딩 등록 ================= */
 
-    @GetMapping("funding-regist-page")
+    @GetMapping("/funding-regist-page")
     public String goToRegisterForm(@RequestParam("teamId") Long teamId, Model model) {
         FundingDTO dto = new FundingDTO();
         dto.setTeamId(teamId);
         model.addAttribute("fundingDTO", dto);
         log.info("fundingDTO = {}.................", dto);
 
-        return "funding/funding-regist-page";
+        return "/funding/funding-regist-page";
 
     }
 
-    @PostMapping("funding-regist-page")
+    @PostMapping("/funding-regist-page")
     public RedirectView register(FundingDTO fundingDTO, @RequestParam(value = "file", required = false) ArrayList<MultipartFile> files, RedirectAttributes redirectAttributes) {
         log.info("fundingDTO = .............{}", fundingDTO);
         fundingService.register(fundingDTO);
@@ -49,7 +49,7 @@ public class FundingController {
         }
         redirectAttributes.addAttribute("teamId", fundingDTO.getTeamId());
         //  funding/funding-list 로 이동
-        return new RedirectView("funding/funding-list-page");
+        return new RedirectView("/funding/funding-list-page");
     }
 
     /* ================= 펀딩 목록 ================= */

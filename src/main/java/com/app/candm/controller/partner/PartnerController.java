@@ -26,6 +26,6 @@ public class PartnerController {
         }
 
         model.addAttribute("memberId", memberId);
-        return "team/partner-list/partner-list";
+        return "/team/partner-list/partner-list";
     }
 }
